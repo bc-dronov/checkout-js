@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.328.1-prerelease.1686748663048](https://github.com/bigcommerce/checkout-js/compare/v1.321.7...v1.328.1-prerelease.1686748663048) (2023-06-14)
+
+
+### Features
+
+* **checkout:** PI-00 fixes for bluesnap direct return ([5c9fbba](https://github.com/bigcommerce/checkout-js/commit/5c9fbba4e276e351eeee18173988b4a3c5678c0c))
+* **checkout:** PI-000 bluesnap direct test migrated to RTL ([f9eb81c](https://github.com/bigcommerce/checkout-js/commit/f9eb81c649ceb1fd2865209b5187ff13c1b1f42d))
+* **checkout:** PI-42 bumped checkout-sdk version ([1ac7eb5](https://github.com/bigcommerce/checkout-js/commit/1ac7eb59d0b19a8e7e933f52a799ee421c39f640))
+* **payment:** INT-7169 BlueSnapDirect: Add payment method component ([2233650](https://github.com/bigcommerce/checkout-js/commit/2233650fa3ee20cdcabbf4d499c4a23cc2c45967))
+* **payment:** INT-7169 BlueSnapDirect: Add some e2e tests ([de33e58](https://github.com/bigcommerce/checkout-js/commit/de33e58b974b3acc1500ed596f7195c1ebbb6625))
+* **payment:** INT-7169 BlueSnapDirect: Set up monorepo package ([6b39470](https://github.com/bigcommerce/checkout-js/commit/6b394701fceb12c38987583bec2188b9b1883268))
+* **payment:** PAYPAL-000 added getFormValues method to PaymentFormService ([c8c3411](https://github.com/bigcommerce/checkout-js/commit/c8c34116072c8aa59267bf577946a719292f8b91))
+* **payment:** PAYPAL-2449 bump checkout-sdk-js version ([88a85fb](https://github.com/bigcommerce/checkout-js/commit/88a85fbf09c4eba899a657c787c72cfcdc222725))
+* **payment:** PAYPAL-2450 added BraintreeLocalPaymentMethod component ([0af6c1f](https://github.com/bigcommerce/checkout-js/commit/0af6c1f87736e604b587a37a6c31e06e1a37608d))
+* **payment:** PAYPAL-2450 added BraintreeLocalPaymentMethod title and logo on radiobutton ([a6c34fd](https://github.com/bigcommerce/checkout-js/commit/a6c34fd997fe0d99b69186fdc73ad45381650fb0))
+* **payment:** PAYPAL-2451 Braintree ACH instrument ([#1289](https://github.com/bigcommerce/checkout-js/issues/1289)) ([07b6178](https://github.com/bigcommerce/checkout-js/commit/07b617802fc1f8ca730252a894cdac80c1600d54))
+
+
+### Bug Fixes
+
+* **payment:** CHECKOUT-000 Remove default button rendering for V2 components ([#1317](https://github.com/bigcommerce/checkout-js/issues/1317)) ([261fb82](https://github.com/bigcommerce/checkout-js/commit/261fb8201e97a9f4d8a059dc4dd9fef1bba7e05c))
+* **payment:** PAYPAL-2451 ACH Vaulting ([#1311](https://github.com/bigcommerce/checkout-js/issues/1311)) ([bd88706](https://github.com/bigcommerce/checkout-js/commit/bd88706560eb96632fb2c6a9343c7559c2edd7bb))
+* **payment:** PAYPAL-2467 checkbox ([#1321](https://github.com/bigcommerce/checkout-js/issues/1321)) ([4199aae](https://github.com/bigcommerce/checkout-js/commit/4199aaee8bceac56362bbd48a2188dd8164f96ad))
+* **payment:** PAYPAL-2575 fixed the issue with PayPalCommerceVenmoPaymentMethod component rendering ([#1307](https://github.com/bigcommerce/checkout-js/issues/1307)) ([aa41b25](https://github.com/bigcommerce/checkout-js/commit/aa41b2534170e636dddc5afa795dde8d3129b694))
+* **payment:** PAYPAL-2595 fixed the issue with place order button for free product ([#1318](https://github.com/bigcommerce/checkout-js/issues/1318)) ([5e659ec](https://github.com/bigcommerce/checkout-js/commit/5e659ec163cc2d42990f9233f3176773e5fdff0e))
+
+
+### Code Refactoring
+
+* **checkout:** PI-000 bump re-map test id for RTL ([dcb4767](https://github.com/bigcommerce/checkout-js/commit/dcb4767dfdc1c5b3ad50a793bcc32aaac90dbada))
+
 ## [1.328.0](https://github.com/bigcommerce/checkout-js/compare/v1.327.0...v1.328.0) (2023-06-14)
 
 
