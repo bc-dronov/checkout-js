@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.333.3-prerelease.1688130999368](https://github.com/bigcommerce/checkout-js/compare/v1.328.2...v1.333.3-prerelease.1688130999368) (2023-06-30)
+
+
+### Features
+
+* **other:** LOCAL-1444 delivery translation ([#1331](https://github.com/bigcommerce/checkout-js/issues/1331)) ([5d6a6de](https://github.com/bigcommerce/checkout-js/commit/5d6a6de8599e234933781f3145628aa1df53922a))
+* **payment:** PAYPAL-2502 bump checkout-sdk-js version ([e352b48](https://github.com/bigcommerce/checkout-js/commit/e352b48169eac24a649c47c2f8b5bdee4726e25b))
+* **payment:** PI-120 bump checkout-sdk version for Autofilling cardholder name ([535b1c4](https://github.com/bigcommerce/checkout-js/commit/535b1c4bfca2f25782bc2f74efb5c242785bf995))
+* **payment:** PI-34 [AmazonPay] Update Amazon Pay to use the latest button design ([#1329](https://github.com/bigcommerce/checkout-js/issues/1329)) ([f99f2c4](https://github.com/bigcommerce/checkout-js/commit/f99f2c45791e9b563f05ebdda04398761979c25b))
+* **payment:** PI-99 [Sezzle] - Text is overflowing and cropped for the Sezzle Payment gateway on mobile ([#1334](https://github.com/bigcommerce/checkout-js/issues/1334)) ([5e04971](https://github.com/bigcommerce/checkout-js/commit/5e049711f1c7dd3f4df68e0e7a8c40c8ff3ba163))
+
+
+### Bug Fixes
+
+* DATA-10928 Fire analytics selectedPaymentMethod event when payment methods are loaded ([#1335](https://github.com/bigcommerce/checkout-js/issues/1335)) ([aa5f8ad](https://github.com/bigcommerce/checkout-js/commit/aa5f8adaa7dd53554dbf9561e83e96cf7c6d4c25))
+* **payment:** PAYPAL-00 bump checkout-sdk-js version ([f6e5bf8](https://github.com/bigcommerce/checkout-js/commit/f6e5bf8bf2af00ce690e2faa9a281969b428b47a))
+* **payment:** PAYPAL-2595 PayPal button shows on store credit ([7435656](https://github.com/bigcommerce/checkout-js/commit/74356569f985295236e5e77bdfe521e5d53c2270))
+
 ### [1.333.2](https://github.com/bigcommerce/checkout-js/compare/v1.333.1...v1.333.2) (2023-06-29)
 
 ### [1.333.1](https://github.com/bigcommerce/checkout-js/compare/v1.333.0...v1.333.1) (2023-06-28)
