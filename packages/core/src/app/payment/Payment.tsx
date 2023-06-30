@@ -207,6 +207,7 @@ class Payment extends Component<
                             }
                             shouldHidePaymentSubmitButton={
                                 (uniqueSelectedMethodId &&
+                                    !rest.isStoreCreditApplied &&
                                     shouldHidePaymentSubmitButton[uniqueSelectedMethodId]) ||
                                 undefined
                             }
