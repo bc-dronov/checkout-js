@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.369.3-prerelease.1694428040241](https://github.com/bigcommerce/checkout-js/compare/v1.365.1...v1.369.3-prerelease.1694428040241) (2023-09-11)
+
+
+### Features
+
+* **checkout:** CHECKOUT-7648 Add automated consent for privacy policy ([#1479](https://github.com/bigcommerce/checkout-js/issues/1479)) ([f3de6af](https://github.com/bigcommerce/checkout-js/commit/f3de6afe3d33bde8d6447106f3ee92aa2a6a74a8))
+* **other:** CHECKOUT-7677 Add polish language translation support ([#1475](https://github.com/bigcommerce/checkout-js/issues/1475)) ([8d20a0a](https://github.com/bigcommerce/checkout-js/commit/8d20a0aa06569108ba5975ada9eaea213fc5e68f))
+* **payment:** PAYPAL-2728 create shipping strategy for Braintree AXO ([e908c69](https://github.com/bigcommerce/checkout-js/commit/e908c693d00d9c52d665f2783b55be0899b6c34d))
+* **payment:** PAYPAL-2774 amazon payment button styles update ([ad92f70](https://github.com/bigcommerce/checkout-js/commit/ad92f705bba32f29042ac996378468f85e1ef2e1))
+* **payment:** PI-747 load bluesnap script ONLY if it wasn't loaded before ([f669053](https://github.com/bigcommerce/checkout-js/commit/f669053a670db09e0ad93e4f0321c620aa96c47d))
+
+
+### Bug Fixes
+
+* **checkout:** CHECKOUT-5966 Enable multishipping for more than 50 items in cart ([#1474](https://github.com/bigcommerce/checkout-js/issues/1474)) ([be19e47](https://github.com/bigcommerce/checkout-js/commit/be19e47b31b085d1f269ca50d49b3c3086160a3f))
+* **payment:** PAYPAL-2859 fixed the issue with wallet buttons on top rendering process ([#1489](https://github.com/bigcommerce/checkout-js/issues/1489)) ([f228383](https://github.com/bigcommerce/checkout-js/commit/f228383dbda7a48773ef75a075f7b470af01ff62))
+
+
+### Code Refactoring
+
+* **checkout:** CHECKOUT-7449 consolidate all utility tools/files in new packages ([#1455](https://github.com/bigcommerce/checkout-js/issues/1455)) ([2182dfa](https://github.com/bigcommerce/checkout-js/commit/2182dfa025e9fa93e7b2297d6e99760ca04ad452))
+
 ### [1.369.2](https://github.com/bigcommerce/checkout-js/compare/v1.369.1...v1.369.2) (2023-09-07)
 
 
