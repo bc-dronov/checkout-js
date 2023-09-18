@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.372.1-prerelease.1695027356761](https://github.com/bigcommerce/checkout-js/compare/v1.365.1...v1.372.1-prerelease.1695027356761) (2023-09-18)
+
+
+### Features
+
+* **checkout:** CHECKOUT-7648 Add automated consent for privacy policy ([#1479](https://github.com/bigcommerce/checkout-js/issues/1479)) ([f3de6af](https://github.com/bigcommerce/checkout-js/commit/f3de6afe3d33bde8d6447106f3ee92aa2a6a74a8))
+* **checkout:** PI-623 BluesnapDirect APMs via redirect ([71567a4](https://github.com/bigcommerce/checkout-js/commit/71567a40bb87476e9b87f7c14a3520070f40dbc2))
+* **other:** CHECKOUT-7677 Add polish language translation support ([#1475](https://github.com/bigcommerce/checkout-js/issues/1475)) ([8d20a0a](https://github.com/bigcommerce/checkout-js/commit/8d20a0aa06569108ba5975ada9eaea213fc5e68f))
+* **payment:** PAYPAL-2632 bump checkout-sdk-js version ([a49a415](https://github.com/bigcommerce/checkout-js/commit/a49a41547265600c093e4207a72e3ddae53791a8))
+* **payment:** PAYPAL-2728 create shipping strategy for Braintree AXO ([e908c69](https://github.com/bigcommerce/checkout-js/commit/e908c693d00d9c52d665f2783b55be0899b6c34d))
+* **payment:** PAYPAL-2930 POC for PPCP Google Pay ([fef883f](https://github.com/bigcommerce/checkout-js/commit/fef883fa3f6f1a9bcb232240f542ae3834f18afa))
+* **payment:** PI-744 fix payment method rendering for mollie klarna ([a138f88](https://github.com/bigcommerce/checkout-js/commit/a138f88fc200e35aa47495acdff69ac576c4dd7f))
+* **payment:** PI-744 fix payment method rendering for mollie klarna ([44baf69](https://github.com/bigcommerce/checkout-js/commit/44baf69445c95320d960dca9bd9ea0c30379b52b))
+* **payment:** PI-744 fix payment method rendering for mollie klarna ([cab6473](https://github.com/bigcommerce/checkout-js/commit/cab6473d2df9a251ed6525a0694d893ed9a677c7))
+* **payment:** PI-744 fix payment method rendering for mollie klarna ([aa5b344](https://github.com/bigcommerce/checkout-js/commit/aa5b34456fd917dccaaebe701fd8a609ef31b297))
+* **payment:** PI-744 fix payment method rendering for mollie klarna ([a504c48](https://github.com/bigcommerce/checkout-js/commit/a504c4867a63e6de450f996c5eae26dc1859d910))
+* **payment:** PI-747 load bluesnap script ONLY if it wasn't loaded before ([f669053](https://github.com/bigcommerce/checkout-js/commit/f669053a670db09e0ad93e4f0321c620aa96c47d))
+
+
+### Bug Fixes
+
+* **checkout:** CHECKOUT-5966 Enable multishipping for more than 50 items in cart ([#1474](https://github.com/bigcommerce/checkout-js/issues/1474)) ([be19e47](https://github.com/bigcommerce/checkout-js/commit/be19e47b31b085d1f269ca50d49b3c3086160a3f))
+* **checkout:** PI-78 fixed credit card issuer mapping for stored diners club cards ([486cc5d](https://github.com/bigcommerce/checkout-js/commit/486cc5d7cf0cd13ab910b58df4d7789260ed5a59))
+* **payment:** PAYPAL-2859 fixed the issue with wallet buttons on top rendering process ([#1489](https://github.com/bigcommerce/checkout-js/issues/1489)) ([f228383](https://github.com/bigcommerce/checkout-js/commit/f228383dbda7a48773ef75a075f7b470af01ff62))
+
+
+### Code Refactoring
+
+* **checkout:** CHECKOUT-7449 consolidate all utility tools/files in new packages ([#1455](https://github.com/bigcommerce/checkout-js/issues/1455)) ([2182dfa](https://github.com/bigcommerce/checkout-js/commit/2182dfa025e9fa93e7b2297d6e99760ca04ad452))
+
 ## [1.372.0](https://github.com/bigcommerce/checkout-js/compare/v1.371.1...v1.372.0) (2023-09-13)
 
 
