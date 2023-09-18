@@ -50,6 +50,7 @@ enum PaymentMethodId {
     PaypalCommerceCreditCards = 'paypalcommercecreditcards',
     PaypalCommerceAlternativeMethod = 'paypalcommercealternativemethods',
     PaypalCommerceVenmo = 'paypalcommercevenmo',
+    PayPalCommerceGooglePay = 'googlepaypaypalcommerce',
     Qpay = 'qpay',
     Quadpay = 'quadpay',
     SagePay = 'sagepay',
