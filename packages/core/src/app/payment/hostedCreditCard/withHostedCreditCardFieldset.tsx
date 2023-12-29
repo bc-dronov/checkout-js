@@ -48,7 +48,7 @@ export interface WithInjectedHostedCreditCardFieldsetProps {
     getHostedStoredCardValidationFieldset(selectedInstrument?: CardInstrument): ReactNode;
 }
 
-interface WithCheckoutContextProps {
+export interface WithCheckoutContextProps {
     isCardCodeRequired: boolean;
     isInstrumentFeatureAvailable: boolean;
     isInstrumentCardCodeRequired(instrument: Instrument, method: PaymentMethod): boolean;
@@ -98,6 +98,9 @@ export default function withHostedCreditCardFieldset<
                 const isInstrumentCardCodeRequired = selectedInstrument
                     ? isInstrumentCardCodeRequiredProp(selectedInstrument, method)
                     : false;
+                const isInstrumentCardExpiryRequired = selectedInstrument
+                    ? isInstrumentCardCodeRequiredProp(selectedInstrument, method)
+                    : false;
                 const styleContainerId = selectedInstrument
                     ? isInstrumentCardCodeRequired
                         ? getHostedFieldId('ccCvv')
@@ -124,6 +127,16 @@ export default function withHostedCreditCardFieldset<
                                                 'payment.credit_card_number_label',
                                             ),
                                             containerId: getHostedFieldId('ccNumber'),
+                                            instrumentId: selectedInstrument.bigpayToken,
+                                        }
+                                      : undefined,
+                              cardExpiryVerification:
+                                  isInstrumentCardExpiryRequired && selectedInstrument
+                                      ? {
+                                            accessibilityLabel: language.translate(
+                                                'payment.credit_card_expiry_label',
+                                            ),
+                                            containerId: getHostedFieldId('ccExpiry'),
                                             instrumentId: selectedInstrument.bigpayToken,
                                         }
                                       : undefined,
@@ -228,6 +241,9 @@ export default function withHostedCreditCardFieldset<
                 const isInstrumentCardCodeRequired = selectedInstrument
                     ? isInstrumentCardCodeRequiredProp(selectedInstrument, method)
                     : false;
+                const isInstrumentCardExpiryRequired = selectedInstrument
+                    ? isInstrumentCardCodeRequiredProp(selectedInstrument, method)
+                    : false;
 
                 return (
                     <HostedCreditCardValidation
@@ -237,6 +253,11 @@ export default function withHostedCreditCardFieldset<
                         cardNumberId={
                             isInstrumentCardNumberRequired
                                 ? getHostedFieldId('ccNumber')
+                                : undefined
+                        }
+                        cardExpiryId={
+                            isInstrumentCardExpiryRequired
+                                ? getHostedFieldId('ccExpiry')
                                 : undefined
                         }
                         focusedFieldType={focusedFieldType}

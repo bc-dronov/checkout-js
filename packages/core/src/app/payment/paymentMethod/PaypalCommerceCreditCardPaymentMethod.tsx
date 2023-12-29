@@ -5,7 +5,9 @@ import {
     WithInjectedHostedCreditCardFieldsetProps,
 } from '../hostedCreditCard';
 
-import CreditCardPaymentMethod, { CreditCardPaymentMethodProps } from './CreditCardPaymentMethod';
+// import CreditCardPaymentMethod, { CreditCardPaymentMethodProps } from './CreditCardPaymentMethod';
+import CreditCardPaymentMethod, { CreditCardPaymentMethodProps } from './PPCPCreditCardPaymentMethod';
+// import withHostedPPCPCreditCardFieldset from "../hostedCreditCard/withHostedPPCPCreditCardFieldset";
 
 export type PaypalCommerceCreditCardPaymentMethodProps = CreditCardPaymentMethodProps;
 
@@ -48,3 +50,4 @@ const PaypalCommerceCreditCardPaymentMethod: FunctionComponent<
 };
 
 export default withHostedCreditCardFieldset(PaypalCommerceCreditCardPaymentMethod);
+// export default withHostedPPCPCreditCardFieldset(withHostedCreditCardFieldset(PaypalCommerceCreditCardPaymentMethod));
