@@ -92,19 +92,10 @@ export default function withHostedPayPalCommerceCreditCardFieldset<
         ) => Promise<HostedFormOptions> = useCallback(
             async (selectedInstrument) => {
                 const styleProps = ['color', 'fontFamily', 'fontSize', 'fontWeight'];
-
-                const isInstrumentCardNumberRequired = selectedInstrument
-                    ? isInstrumentCardNumberRequiredProp(selectedInstrument)
+                const shouldRenderHostedFieldsWithInstrument = selectedInstrument ? !selectedInstrument.trustedShippingAddress
                     : false;
-                const isInstrumentCardCodeRequired = selectedInstrument
-                    ? isInstrumentCardCodeRequiredProp(selectedInstrument, method)
-                    : false;
-                const isInstrumentCardExpiryRequired = selectedInstrument
-                    ? !selectedInstrument.trustedShippingAddress
-                    : false;
-
                 const styleContainerId = selectedInstrument
-                    ? isInstrumentCardCodeRequired
+                    ? shouldRenderHostedFieldsWithInstrument
                         ? getHostedFieldId('ccCvv')
                         : undefined
                     : getHostedFieldId('ccNumber');
@@ -113,7 +104,7 @@ export default function withHostedPayPalCommerceCreditCardFieldset<
                     fields: selectedInstrument
                         ? {
                             cardCodeVerification:
-                                isInstrumentCardCodeRequired && selectedInstrument
+                                shouldRenderHostedFieldsWithInstrument && selectedInstrument
                                     ? {
                                         accessibilityLabel: language.translate(
                                             'payment.credit_card_cvv_label',
@@ -123,7 +114,7 @@ export default function withHostedPayPalCommerceCreditCardFieldset<
                                     }
                                     : undefined,
                             cardNumberVerification:
-                                isInstrumentCardNumberRequired && selectedInstrument
+                                shouldRenderHostedFieldsWithInstrument && selectedInstrument
                                     ? {
                                         accessibilityLabel: language.translate(
                                             'payment.credit_card_number_label',
@@ -133,7 +124,7 @@ export default function withHostedPayPalCommerceCreditCardFieldset<
                                     }
                                     : undefined,
                             cardExpiryVerification:
-                                isInstrumentCardExpiryRequired && selectedInstrument
+                                shouldRenderHostedFieldsWithInstrument && selectedInstrument
                                     ? {
                                           accessibilityLabel: language.translate(
                                               'payment.credit_card_expiry_label',
@@ -221,8 +212,6 @@ export default function withHostedPayPalCommerceCreditCardFieldset<
                 focusedFieldType,
                 getHostedFieldId,
                 isCardCodeRequired,
-                isInstrumentCardCodeRequiredProp,
-                isInstrumentCardNumberRequiredProp,
                 language,
                 method,
                 setFieldValue,
@@ -237,28 +226,21 @@ export default function withHostedPayPalCommerceCreditCardFieldset<
             selectedInstrument: CardInstrument,
         ) => ReactNode = useCallback(
             (selectedInstrument) => {
-                const isInstrumentCardNumberRequired = selectedInstrument
-                    ? isInstrumentCardNumberRequiredProp(selectedInstrument)
-                    : false;
-                const isInstrumentCardCodeRequired = selectedInstrument
-                    ? isInstrumentCardCodeRequiredProp(selectedInstrument, method)
-                    : false;
-                const isInstrumentCardExpiryRequired = selectedInstrument
-                    ? !selectedInstrument.trustedShippingAddress
+                const shouldRenderHostedFieldsWithInstrument = selectedInstrument ? !selectedInstrument.trustedShippingAddress
                     : false;
 
                 return (
                     <HostedCreditCardValidation
                         cardCodeId={
-                            isInstrumentCardCodeRequired ? getHostedFieldId('ccCvv') : undefined
+                            shouldRenderHostedFieldsWithInstrument ? getHostedFieldId('ccCvv') : undefined
                         }
                         cardNumberId={
-                            isInstrumentCardNumberRequired
+                            shouldRenderHostedFieldsWithInstrument
                                 ? getHostedFieldId('ccNumber')
                                 : undefined
                         }
                         cardExpiryId={
-                            isInstrumentCardExpiryRequired
+                            shouldRenderHostedFieldsWithInstrument
                                 ? getHostedFieldId('ccExpiry')
                                 : undefined
                         }
@@ -269,8 +251,6 @@ export default function withHostedPayPalCommerceCreditCardFieldset<
             [
                 focusedFieldType,
                 getHostedFieldId,
-                isInstrumentCardCodeRequiredProp,
-                isInstrumentCardNumberRequiredProp,
                 method,
             ],
         );
