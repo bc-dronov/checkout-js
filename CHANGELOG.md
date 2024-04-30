@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.479.2-prerelease.1714468325351](https://github.com/bigcommerce/checkout-js/compare/v1.474.2...v1.479.2-prerelease.1714468325351) (2024-04-30)
+
+
+### Features
+
+* **payment:** PAYPAL-3976 added validation for invalid card name field ([837cd8e](https://github.com/bigcommerce/checkout-js/commit/837cd8eabe0507170dd757d6a9463835c944157f))
+* **payment:** PAYPAL-3976 bump sdk version ([36d78b6](https://github.com/bigcommerce/checkout-js/commit/36d78b6b7043009521122a07722f3c219bb518fe))
+* **payment:** PAYPAL-4066 localizeAddress moved to shared package ([312b090](https://github.com/bigcommerce/checkout-js/commit/312b0905983b7ac5a2845ca10e54659d3df8f4d4))
+* **payment:** PAYPAL-4066 PayPal Fastlane shipping component ([3582795](https://github.com/bigcommerce/checkout-js/commit/3582795bf645284c66d3ce623322481d3d9470ae))
+* **payment:** PAYPAL-4081 PPCP Credit Card verification fields fix ([2b19967](https://github.com/bigcommerce/checkout-js/commit/2b19967349e54a3e12f1df13203684da7f414729))
+* **payment:** PI-1576 Refactor the existing checkoutcom components ([70c12d8](https://github.com/bigcommerce/checkout-js/commit/70c12d840a4e53a9283cb657b71bd9555a9f347a))
+* **payment:** PI-1581 bump checkout-sdk version ([d051d6a](https://github.com/bigcommerce/checkout-js/commit/d051d6a80b4c856ee98a440ceba6fc4df07977d9))
+* **payment:** PI-1961 E2E tests for checkoutcom integration ([cd25fb6](https://github.com/bigcommerce/checkout-js/commit/cd25fb6af3e662561d72a19664bbe109bfc522a9))
+
+
+### Bug Fixes
+
+* **payment:** PAYPAL-4090 updated submit button text with Place order while customer pays with PPCP account vaulted instrument ([6a937ef](https://github.com/bigcommerce/checkout-js/commit/6a937ef7bdc814e436175ffdecc0f5adc753be27))
+
 ### [1.479.1](https://github.com/bigcommerce/checkout-js/compare/v1.479.0...v1.479.1) (2024-04-30)
 
 
