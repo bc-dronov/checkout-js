@@ -4,6 +4,9 @@ import React from 'react';
 
 import { ExtensionProvider } from '@bigcommerce/checkout/checkout-extension';
 import { createLocaleContext, LocaleContext, LocaleContextType } from '@bigcommerce/checkout/locale';
+import {
+    CheckoutProvider,
+} from '@bigcommerce/checkout/payment-integration-api';
 
 import { getAddressFormFields } from '../../address/formField.mock';
 import CheckoutStepType from '../../checkout/CheckoutStepType';
@@ -55,11 +58,13 @@ describe('SingleShippingForm', () => {
         };
 
         component = mount(
-            <LocaleContext.Provider value={localeContext}>
-                <ExtensionProvider checkoutService={checkoutService}>
-                    <SingleShippingForm {...defaultProps} />
-                </ExtensionProvider>
-            </LocaleContext.Provider>,
+            <CheckoutProvider checkoutService={checkoutService}>
+                <LocaleContext.Provider value={localeContext}>
+                    <ExtensionProvider checkoutService={checkoutService}>
+                        <SingleShippingForm {...defaultProps} />
+                    </ExtensionProvider>
+                </LocaleContext.Provider>
+            </CheckoutProvider>
         );
     });
 
@@ -94,6 +99,7 @@ describe('SingleShippingForm', () => {
 
     it('calls updateAddress if modified field does not affect shipping but makes form valid', (done) => {
         component = mount(
+            <CheckoutProvider checkoutService={checkoutService}>
             <LocaleContext.Provider value={localeContext}>
                 <ExtensionProvider checkoutService={checkoutService}>
                     <SingleShippingForm
@@ -103,7 +109,8 @@ describe('SingleShippingForm', () => {
                         ]}
                     />
                 </ExtensionProvider>
-            </LocaleContext.Provider>,
+            </LocaleContext.Provider>
+            </CheckoutProvider>
         );
 
         component
@@ -213,6 +220,7 @@ describe('SingleShippingForm', () => {
 
     it('calls update address for amazon pay if required custom fields are filled out', (done) => {
         component = mount(
+            <CheckoutProvider checkoutService={checkoutService}>
             <LocaleContext.Provider value={localeContext}>
                 <ExtensionProvider checkoutService={checkoutService}>
                     <SingleShippingForm
@@ -232,7 +240,8 @@ describe('SingleShippingForm', () => {
                         ]}
                     />
                 </ExtensionProvider>
-            </LocaleContext.Provider>,
+            </LocaleContext.Provider>
+            </CheckoutProvider>
         );
 
         component.find('input[name="shippingAddress.customFields.field_25"]').simulate('change', {
@@ -265,6 +274,7 @@ describe('SingleShippingForm', () => {
 
     it('does not update address for amazon pay if required custom fields is left empty', (done) => {
         component = mount(
+            <CheckoutProvider checkoutService={checkoutService}>
             <LocaleContext.Provider value={localeContext}>
                 <ExtensionProvider checkoutService={checkoutService}>
                     <SingleShippingForm
@@ -284,7 +294,8 @@ describe('SingleShippingForm', () => {
                         ]}
                     />
                 </ExtensionProvider>
-            </LocaleContext.Provider>,
+            </LocaleContext.Provider>
+            </CheckoutProvider>
         );
 
         component.find('input[name="shippingAddress.customFields.field_25"]').simulate('change', {
@@ -300,11 +311,13 @@ describe('SingleShippingForm', () => {
 
     it('does not render billing same as shipping checkbox for amazon pay', () => {
         component = mount(
+            <CheckoutProvider checkoutService={checkoutService}>
             <LocaleContext.Provider value={localeContext}>
                 <ExtensionProvider checkoutService={checkoutService}>
                     <SingleShippingForm {...defaultProps} methodId="amazonpay" />
                 </ExtensionProvider>
             </LocaleContext.Provider>,
+            </CheckoutProvider>
         );
 
         expect(component.contains(<BillingSameAsShippingField />)).toBe(false);
