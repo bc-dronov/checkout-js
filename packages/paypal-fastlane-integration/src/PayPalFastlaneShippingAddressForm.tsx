@@ -22,7 +22,7 @@ import {
 import isPayPalCommerceFastlaneMethod from './is-paypal-commerce-fastlane-method';
 import PoweredByPayPalFastlaneLabel from './PoweredByPayPalFastlaneLabel';
 
-interface PayPalFastlaneStaticAddressProps {
+export interface PayPalFastlaneStaticAddressProps {
     address: Address;
     formFields: FormField[];
     isLoading: boolean;
