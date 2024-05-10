@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.479.2-prerelease.1715338241174](https://github.com/bigcommerce/checkout-js/compare/v1.474.2...v1.479.2-prerelease.1715338241174) (2024-05-10)
+
+
+### Features
+
+* **payment:** PAYPAL-3976 added validation for invalid card name field ([837cd8e](https://github.com/bigcommerce/checkout-js/commit/837cd8eabe0507170dd757d6a9463835c944157f))
+* **payment:** PAYPAL-3976 bump sdk version ([36d78b6](https://github.com/bigcommerce/checkout-js/commit/36d78b6b7043009521122a07722f3c219bb518fe))
+* **payment:** PAYPAL-4066 localizeAddress moved to shared package ([e44d890](https://github.com/bigcommerce/checkout-js/commit/e44d89073b271e3d40d8e5c363b8e24f6867b183))
+* **payment:** PAYPAL-4066 PayPal Fastlane shipping component ([48b8012](https://github.com/bigcommerce/checkout-js/commit/48b80122881c4222ff3ff76308ba7a8f08a8b756))
+* **payment:** PAYPAL-4066 PayPal Fastlane shipping component test added ([e03fea8](https://github.com/bigcommerce/checkout-js/commit/e03fea8285d1faa24939ceebf9a32c60e33c4d78))
+* **payment:** PAYPAL-4081 PPCP Credit Card verification fields fix ([617e000](https://github.com/bigcommerce/checkout-js/commit/617e0001074e0b3a2a1ff860a616dc0b9a3bec01))
+* **payment:** PI-1576 Refactor the existing checkoutcom components ([70c12d8](https://github.com/bigcommerce/checkout-js/commit/70c12d840a4e53a9283cb657b71bd9555a9f347a))
+* **payment:** PI-1581 bump checkout-sdk version ([d051d6a](https://github.com/bigcommerce/checkout-js/commit/d051d6a80b4c856ee98a440ceba6fc4df07977d9))
+* **payment:** PI-1961 E2E tests for checkoutcom integration ([cd25fb6](https://github.com/bigcommerce/checkout-js/commit/cd25fb6af3e662561d72a19664bbe109bfc522a9))
+
+
+### Bug Fixes
+
+* **payment:** PAYPAL-4090 updated submit button text with Place order while customer pays with PPCP account vaulted instrument ([a6b2a1b](https://github.com/bigcommerce/checkout-js/commit/a6b2a1bd20c991cdfc01bf69fcb2733f34fb5e23))
+
 ### [1.479.1](https://github.com/bigcommerce/checkout-js/compare/v1.479.0...v1.479.1) (2024-04-30)
 
 
