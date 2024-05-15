@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.478.1-prerelease.1715788102028](https://github.com/bigcommerce/checkout-js/compare/v1.474.2...v1.478.1-prerelease.1715788102028) (2024-05-15)
+
+
+### Features
+
+* **payment:** PAYPAL-3976 added validation for invalid card name field ([837cd8e](https://github.com/bigcommerce/checkout-js/commit/837cd8eabe0507170dd757d6a9463835c944157f))
+* **payment:** PAYPAL-3976 bump sdk version ([36d78b6](https://github.com/bigcommerce/checkout-js/commit/36d78b6b7043009521122a07722f3c219bb518fe))
+* **payment:** PAYPAL-4066 localizeAddress moved to shared package ([e44d890](https://github.com/bigcommerce/checkout-js/commit/e44d89073b271e3d40d8e5c363b8e24f6867b183))
+* **payment:** PAYPAL-4066 PayPal Fastlane shipping component ([bac57dd](https://github.com/bigcommerce/checkout-js/commit/bac57dd05ff301548d59628b03ae80af6d361435))
+* **payment:** PAYPAL-4066 shipping address component mapper created ([ffc6987](https://github.com/bigcommerce/checkout-js/commit/ffc6987b10123f9dcea0f43c109b19551b95dc28))
+* **payment:** PI-1576 Refactor the existing checkoutcom components ([70c12d8](https://github.com/bigcommerce/checkout-js/commit/70c12d840a4e53a9283cb657b71bd9555a9f347a))
+* **payment:** PI-1581 bump checkout-sdk version ([d051d6a](https://github.com/bigcommerce/checkout-js/commit/d051d6a80b4c856ee98a440ceba6fc4df07977d9))
+* **payment:** PI-1961 E2E tests for checkoutcom integration ([cd25fb6](https://github.com/bigcommerce/checkout-js/commit/cd25fb6af3e662561d72a19664bbe109bfc522a9))
+
 ## [1.478.0](https://github.com/bigcommerce/checkout-js/compare/v1.477.0...v1.478.0) (2024-04-24)
 
 
