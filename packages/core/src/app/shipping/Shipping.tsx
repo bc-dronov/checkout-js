@@ -17,7 +17,7 @@ import { noop } from 'lodash';
 import React, { Component, ReactNode } from 'react';
 import { createSelector } from 'reselect';
 
-import { shouldUseStripeLinkByMinimumAmount } from '@bigcommerce/checkout/instrument-utils';
+// import { shouldUseStripeLinkByMinimumAmount } from '@bigcommerce/checkout/instrument-utils';
 import { CheckoutContextProps } from '@bigcommerce/checkout/payment-integration-api';
 import { AddressFormSkeleton } from '@bigcommerce/checkout/ui';
 
@@ -26,7 +26,7 @@ import { withCheckout } from '../checkout';
 import CheckoutStepStatus from '../checkout/CheckoutStepStatus';
 import { EMPTY_ARRAY, isFloatingLabelEnabled } from '../common/utility';
 import getProviderWithCustomCheckout from '../payment/getProviderWithCustomCheckout';
-import { PaymentMethodId } from '../payment/paymentMethod';
+// import { PaymentMethodId } from '../payment/paymentMethod';
 
 import { UnassignItemError } from './errors';
 import getShippableItemsCount from './getShippableItemsCount';
@@ -35,7 +35,7 @@ import { MultiShippingFormValues } from './MultiShippingForm';
 import ShippingForm from './ShippingForm';
 import ShippingHeader from './ShippingHeader';
 import { SingleShippingFormValues } from './SingleShippingForm';
-import StripeShipping from './stripeUPE/StripeShipping';
+// import StripeShipping from './stripeUPE/StripeShipping';
 
 export interface ShippingProps {
     isBillingSameAsShipping: boolean;
@@ -84,7 +84,7 @@ export interface WithCheckoutShippingProps {
     updateBillingAddress(address: Partial<Address>): Promise<CheckoutSelectors>;
     updateCheckout(payload: CheckoutRequestBody): Promise<CheckoutSelectors>;
     updateShippingAddress(address: Partial<Address>): Promise<CheckoutSelectors>;
-    shouldRenderStripeForm: boolean;
+    // shouldRenderStripeForm: boolean;
 }
 
 interface ShippingState {
@@ -132,7 +132,7 @@ class Shipping extends Component<ShippingProps & WithCheckoutShippingProps, Ship
             isMultiShippingMode,
             step,
             isFloatingLabelEnabled,
-            shouldRenderStripeForm,
+            // shouldRenderStripeForm,
             shouldRenderWhileLoading,
             ...shippingFormProps
         } = this.props;
@@ -141,25 +141,25 @@ class Shipping extends Component<ShippingProps & WithCheckoutShippingProps, Ship
             isInitializing,
         } = this.state;
 
-        if (shouldRenderStripeForm && !customer.email && this.props.countries.length > 0) {
-            return <StripeShipping
-                { ...shippingFormProps }
-                customer={ customer }
-                deinitialize={deinitializeShippingMethod}
-                initialize={initializeShippingMethod}
-                isBillingSameAsShipping={isBillingSameAsShipping}
-                isGuest={ isGuest }
-                isInitialValueLoaded={shouldRenderWhileLoading ? !isInitializing : true}
-                isLoading={ isInitializing }
-                isMultiShippingMode={isMultiShippingMode}
-                isShippingMethodLoading={ this.props.isLoading }
-                onMultiShippingChange={ this.handleMultiShippingModeSwitch }
-                onSubmit={this.handleSingleShippingSubmit}
-                shouldShowMultiShipping={ shouldShowMultiShipping }
-                step={step}
-                updateAddress={updateShippingAddress}
-            />;
-        }
+        // if (shouldRenderStripeForm && !customer.email && this.props.countries.length > 0) {
+        //     return <StripeShipping
+        //         { ...shippingFormProps }
+        //         customer={ customer }
+        //         deinitialize={deinitializeShippingMethod}
+        //         initialize={initializeShippingMethod}
+        //         isBillingSameAsShipping={isBillingSameAsShipping}
+        //         isGuest={ isGuest }
+        //         isInitialValueLoaded={shouldRenderWhileLoading ? !isInitializing : true}
+        //         isLoading={ isInitializing }
+        //         isMultiShippingMode={isMultiShippingMode}
+        //         isShippingMethodLoading={ this.props.isLoading }
+        //         onMultiShippingChange={ this.handleMultiShippingModeSwitch }
+        //         onSubmit={this.handleSingleShippingSubmit}
+        //         shouldShowMultiShipping={ shouldShowMultiShipping }
+        //         step={step}
+        //         updateAddress={updateShippingAddress}
+        //     />;
+        // }
 
         return (
             <AddressFormSkeleton isLoading={isInitializing} renderWhileLoading={shouldRenderWhileLoading}>
@@ -433,7 +433,7 @@ export function mapToShippingProps({
         updateCheckout: checkoutService.updateCheckout,
         updateShippingAddress: checkoutService.updateShippingAddress,
         isFloatingLabelEnabled: isFloatingLabelEnabled(config.checkoutSettings),
-        shouldRenderStripeForm: providerWithCustomCheckout === PaymentMethodId.StripeUPE && shouldUseStripeLinkByMinimumAmount(cart),
+        // shouldRenderStripeForm: providerWithCustomCheckout === PaymentMethodId.StripeUPE && shouldUseStripeLinkByMinimumAmount(cart),
     };
 }
 

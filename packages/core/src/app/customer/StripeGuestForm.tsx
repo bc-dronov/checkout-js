@@ -94,6 +94,7 @@ const StripeGuestForm: FunctionComponent<StripeGuestFormProps & FormikProps<Gues
     };
 
     const stripeInitialize = () => {
+        console.log('init2');
         initialize( {
             methodId: 'stripeupe',
             stripeupe: {
@@ -179,15 +180,16 @@ const StripeGuestForm: FunctionComponent<StripeGuestFormProps & FormikProps<Gues
 
     return (
         <>
+            {/*<div id="stripeupeLink">123123123</div>*/}
             <CustomerSkeleton isLoading={isStripeLoading}/>
             <Form
                 className="checkout-form"
                 id="checkout-customer-guest"
                 testId="checkout-customer-guest"
             >
-                <div className="checkout-form" style={ {display: isStripeLoading ? 'none' : undefined} }>
+                <div className="checkout-form" style={{display: isStripeLoading ? 'none' : undefined}}>
                     <Fieldset
-                        legend={ !authentication &&
+                        legend={!authentication &&
                             <Legend hidden>
                                 <TranslatedString id="customer.guest_customer_text"/>
                             </Legend>
@@ -195,41 +197,40 @@ const StripeGuestForm: FunctionComponent<StripeGuestFormProps & FormikProps<Gues
                     >
                         <div className="customerEmail-container">
                             <div className="customerEmail-body">
-                                <div id="stripeupeLink"/>
                                 <br/>
-                                { (canSubscribe || requiresMarketingConsent) && <BasicFormField
+                                {(canSubscribe || requiresMarketingConsent) && <BasicFormField
                                     name="shouldSubscribe"
-                                    render={ renderField }
-                                /> }
+                                    render={renderField}
+                                />}
                             </div>
 
                             <div className="form-actions customerEmail-action">
-                                { (!authentication || (authentication && !isNewAuth )) && <Button
+                                {(!authentication || (authentication && !isNewAuth)) && <Button
                                     className="stripeCustomerEmail-button"
-                                    disabled={ continueAsAGuestButton }
+                                    disabled={continueAsAGuestButton}
                                     id="stripe-checkout-customer-continue"
-                                    isLoading={ isLoading }
+                                    isLoading={isLoading}
                                     testId="stripe-customer-continue-as-guest-button"
                                     type="submit"
-                                    variant={ ButtonVariant.Primary }
+                                    variant={ButtonVariant.Primary}
                                 >
-                                    <TranslatedString id={ buttonText }/>
-                                </Button> }
+                                    <TranslatedString id={buttonText}/>
+                                </Button>}
                             </div>
                         </div>
 
                         {privacyPolicyUrl && (
-                            <PrivacyPolicyField isExpressPrivacyPolicy={isExpressPrivacyPolicy} url={privacyPolicyUrl} />
+                            <PrivacyPolicyField isExpressPrivacyPolicy={isExpressPrivacyPolicy} url={privacyPolicyUrl}/>
                         )}
 
                         {
                             !isLoading && <p>
                                 <TranslatedString id="customer.login_text"/>
-                                { ' ' }
+                                {' '}
                                 <a
                                     data-test="customer-continue-button"
                                     id="checkout-customer-login"
-                                    onClick={ onShowLogin }
+                                    onClick={onShowLogin}
                                     role="button"
                                     tabIndex={0}
                                 >
@@ -237,10 +238,10 @@ const StripeGuestForm: FunctionComponent<StripeGuestFormProps & FormikProps<Gues
                                 </a>
                             </p>
                         }
-                        { !authentication && checkoutButtons }
+                        {!authentication && checkoutButtons}
                     </Fieldset>
                 </div>
-                { renderCheckoutThemeStylesForStripeUPE() }
+                {renderCheckoutThemeStylesForStripeUPE()}
             </Form>
         </>
     );

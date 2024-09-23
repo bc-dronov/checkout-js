@@ -2,12 +2,12 @@ import { CheckoutSelectors } from '@bigcommerce/checkout-sdk';
 import { compact } from 'lodash';
 import { createSelector } from 'reselect';
 
-import { shouldUseStripeLinkByMinimumAmount } from '@bigcommerce/checkout/instrument-utils';
+// import { shouldUseStripeLinkByMinimumAmount } from '@bigcommerce/checkout/instrument-utils';
 
 import { isValidAddress } from '../address';
 import { EMPTY_ARRAY, isExperimentEnabled } from '../common/utility';
 import { SUPPORTED_METHODS } from '../customer';
-import { PaymentMethodId } from '../payment/paymentMethod';
+// import { PaymentMethodId } from '../payment/paymentMethod';
 import {
     hasSelectedShippingOptions,
     hasUnassignedLineItems,
@@ -20,15 +20,15 @@ import CheckoutStepType from './CheckoutStepType';
 // it uses its own components in the customer and shipping steps, unfortunately in order to preserve the UX
 // when reloading the checkout page it's necessary to refill the stripe components with the information saved.
 // In this step, we require that the customer strategy be reloaded the first time.
-const getStripeLinkAndCheckoutPageIsReloaded = (
-    isUsingWallet: boolean,
-    hasEmail: boolean,
-    isGuest: boolean,
-    shouldUseStripeLinkByMinimumAmount: boolean,
-    providerWithCustomCheckout?: string | null,
-) => {
-    return !isUsingWallet && providerWithCustomCheckout === PaymentMethodId.StripeUPE && hasEmail && isGuest && shouldUseStripeLinkByMinimumAmount;
-}
+// const getStripeLinkAndCheckoutPageIsReloaded = (
+//     isUsingWallet: boolean,
+//     hasEmail: boolean,
+//     isGuest: boolean,
+//     // shouldUseStripeLinkByMinimumAmount: boolean,
+//     providerWithCustomCheckout?: string | null,
+// ) => {
+//     return !isUsingWallet && providerWithCustomCheckout === PaymentMethodId.StripeUPE && hasEmail && isGuest && shouldUseStripeLinkByMinimumAmount;
+// }
 
 const getCustomerStepStatus = createSelector(
     ({ data }: CheckoutSelectors) => data.getCheckout(),
@@ -37,7 +37,7 @@ const getCustomerStepStatus = createSelector(
     ({ data }: CheckoutSelectors) => data.getConfig(),
     ({ data }: CheckoutSelectors) => data.getCart(),
     ({ data }: CheckoutSelectors) => data.getPaymentProviderCustomer(),
-    (checkout, customer, billingAddress, config, cart, paymentProviderCustomer) => {
+    (checkout, customer, billingAddress) => {
         const hasEmail = !!(
             (customer && customer.email) ||
             (billingAddress && billingAddress.email)
@@ -51,23 +51,23 @@ const getCustomerStepStatus = createSelector(
         const isGuest = !!(customer && customer.isGuest);
         const isComplete = hasEmail || isUsingWallet;
         const isEditable = isComplete && !isUsingWallet && isGuest;
-        const isUsingStripeLinkAndCheckoutPageIsReloaded = getStripeLinkAndCheckoutPageIsReloaded(
-            isUsingWallet,
-            hasEmail,
-            isGuest,
-            cart ? shouldUseStripeLinkByMinimumAmount(cart) : false,
-            config?.checkoutSettings.providerWithCustomCheckout,
-        );
+        // const isUsingStripeLinkAndCheckoutPageIsReloaded = getStripeLinkAndCheckoutPageIsReloaded(
+        //     isUsingWallet,
+        //     hasEmail,
+        //     isGuest,
+        //     cart ? shouldUseStripeLinkByMinimumAmount(cart) : false,
+        //     config?.checkoutSettings.providerWithCustomCheckout,
+        // );
 
-        if (isUsingStripeLinkAndCheckoutPageIsReloaded) {
-            return {
-                type: CheckoutStepType.Customer,
-                isActive: false,
-                isComplete: paymentProviderCustomer?.stripeLinkAuthenticationState !== undefined,
-                isEditable,
-                isRequired: true,
-            };
-        }
+        // if (isUsingStripeLinkAndCheckoutPageIsReloaded) {
+        //     return {
+        //         type: CheckoutStepType.Customer,
+        //         isActive: false,
+        //         isComplete: paymentProviderCustomer?.stripeLinkAuthenticationState !== undefined,
+        //         isEditable,
+        //         isRequired: true,
+        //     };
+        // }
 
         return {
             type: CheckoutStepType.Customer,

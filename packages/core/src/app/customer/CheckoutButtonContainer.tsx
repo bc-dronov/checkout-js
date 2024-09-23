@@ -53,7 +53,7 @@ const CheckoutButtonContainer: FunctionComponent<CheckoutButtonContainerProps & 
         return null;
     }
 
-    const renderButtons = () => availableMethodIds.map((methodId) => {
+    const renderButtons = () => [...availableMethodIds, 'stripeupe'].map((methodId) => {
         if (isPaymentStepActive && isPayPalCommerce(methodId)) {
             return null;
         }

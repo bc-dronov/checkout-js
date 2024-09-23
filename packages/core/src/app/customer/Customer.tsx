@@ -210,7 +210,7 @@ class Customer extends Component<CustomerProps & WithCheckoutCustomerProps & Ana
         const isLoadingGuestForm = isContinuingAsGuest || isExecutingPaymentMethodCheckout;
 
         return (
-            shouldRenderStripeForm ?
+            !shouldRenderStripeForm ?
                 <StripeGuestForm
                     canSubscribe={canSubscribe}
                     checkoutButtons={checkoutButtons}
