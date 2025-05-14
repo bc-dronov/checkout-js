@@ -29,6 +29,8 @@ export const SUPPORTED_METHODS: string[] = [
     'googlepayworldpayaccess',
     'googlepaypaypalcommerce',
     'googlepaytdonlinemart',
+    // TODO mock id below
+    'stripeupe'
 ];
 
 export const getSupportedMethodIds = (methodIds: string[], checkoutSettings?: CheckoutSettings): string[] => {
